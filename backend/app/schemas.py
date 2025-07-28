@@ -7,12 +7,11 @@ class TaskCreate(BaseModel):
     task_class: str
 
 class TaskResponse(BaseModel):
-    task_id: int
+    id: int
     text: str
     due_date: str
     task_type: str
     task_class: str
-    user_id: int
     is_completed: bool
     
     class Config:
@@ -24,7 +23,7 @@ class UserCreate(BaseModel):
     email: str
 
 class UserResponse(BaseModel):
-    user_id: int
+    id: int
     username: str
     email: str
     
@@ -34,7 +33,3 @@ class UserResponse(BaseModel):
 class UserLogin(BaseModel):
     username: str
     password: str
-    
-class Token(BaseModel):
-    access_token: str
-    token_type: str
